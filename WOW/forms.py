@@ -5,12 +5,11 @@ import datetime
 
 from django.db import models
 from django.core.files.storage import FileSystemStorage
-from sourcebook_app.models import *
+from WOW.models import UserInfo
 
 
-class rsvpForm(forms.ModelForm):
-	note = forms.CharField(widget=CKEditorWidget(), required=False)
-	class Meta:
-		fields = ['name','email','note']
-		model = rsvp
+class UserForm(forms.ModelForm):
+    class Meta:
+        fields = ['name', 'email']
+        model = UserInfo
 
